@@ -43,8 +43,8 @@ module Conduit::Driver::Reactor
       end
     end
 
-    def perform_request      
-      response = request(body: view, method: http_method)      
+    def perform_request
+      response = request(body: view, method: http_method)
       parser   = parser_class.new(response.body)
       Conduit::ApiResponse.new(raw_response: response, parser: parser)
     end
