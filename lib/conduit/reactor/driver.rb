@@ -7,6 +7,11 @@ module Conduit
       optional_attributes  :mock_status, :host_override
 
       action :activate
+      action :deactivate
+      action :suspend
+      action :restore
+      action :change_device
+      action :change_number
       action :create_subscriber
       action :create_line
       action :query_line
