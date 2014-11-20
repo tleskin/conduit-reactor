@@ -1,7 +1,7 @@
 require 'conduit/reactor/actions/base'
 
 module Conduit::Driver::Reactor
-  class QuerySubscriber < Conduit::Driver::Reactor::Base
+  class GetSubscriber < Conduit::Driver::Reactor::Base
     url_route           '/subscribers'
     required_attributes :subscriber_id
 
@@ -14,6 +14,6 @@ module Conduit::Driver::Reactor
 
       parser   = parser_class.new(response.body)
       Conduit::ApiResponse.new(raw_response: response, parser: parser)
-    end    
+    end
   end
 end

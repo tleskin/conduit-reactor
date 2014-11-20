@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe QueryLine do
+describe GetLine do
   subject do
     described_class.new \
       credentials.merge(mdn: '5555555555', host_override: 'www.hello-labs.com')

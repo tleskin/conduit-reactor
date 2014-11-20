@@ -14,8 +14,8 @@ module Conduit
       action :change_number
       action :create_subscriber
       action :create_line
-      action :query_line
-      action :query_subscriber
+      action :get_line
+      action :get_subscriber
       action :query_subscription
     end
   end

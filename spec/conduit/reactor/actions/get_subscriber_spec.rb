@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe QuerySubscriber do
+describe GetSubscriber do
   subject do
     described_class.new \
       credentials.merge(subscriber_id: '1', host_override: 'www.hello-labs.com')
