@@ -1,7 +1,7 @@
 require 'conduit/reactor/parsers/base'
 
 module Conduit::Driver::Reactor
-  class QuerySubscriber::Parser < Parser::Base
+  class GetSubscriber::Parser < Parser::Base
     attribute :subscriber_id do
       object_path('subscribers/0/id')
     end

@@ -1,6 +1,6 @@
 require 'conduit/reactor/request_mocker/base'
 
 module Conduit::Reactor::RequestMocker
-  class QueryLine < Base
+  class GetSubscriber < Base
   end
 end

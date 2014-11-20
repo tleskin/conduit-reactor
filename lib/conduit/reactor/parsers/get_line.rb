@@ -1,7 +1,7 @@
 require 'conduit/reactor/parsers/base'
 
 module Conduit::Driver::Reactor
-  class QueryLine::Parser < Parser::Base
+  class GetLine::Parser < Parser::Base
     attribute :line_id do
       object_path('lines/0/id')
     end
