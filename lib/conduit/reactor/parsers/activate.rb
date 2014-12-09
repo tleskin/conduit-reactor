@@ -49,5 +49,10 @@ module Conduit::Driver::Reactor
     def response_content?
       !object_path('lines').nil?
     end
+
+    def async_response?
+      mdn = object_path('lines/0/mdn')
+      (mdn.nil? || mdn.empty?)
+    end
   end
 end

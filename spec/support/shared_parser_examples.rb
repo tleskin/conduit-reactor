@@ -6,6 +6,12 @@ shared_examples_for 'parser success response' do
   its(:response_errors)   { should be_empty }
 end
 
+shared_examples_for 'parser async success response' do
+  it                      { should be_an_instance_of parser }
+  its(:response_status)   { should eql 'submitted' }
+  its(:response_errors)   { should be_empty }
+end
+
 shared_examples_for 'parser failure response' do
   it                    { should be_an_instance_of parser }
   its(:response_status) { should eql 'failure' }
