@@ -15,7 +15,7 @@ module Conduit::Driver::Reactor
         @success &&= response_errors.empty?
 
         if @success
-          'success'
+          async_response? ? 'submitted' : 'success'
         elsif ise? || !response_content?
           'error'
         else
@@ -33,6 +33,10 @@ module Conduit::Driver::Reactor
         raise(StandardError, 'Please implement response_content? in your parser')
       end
 
+      def async_response?
+        false
+      end
+
       private
 
       attr_reader :json
@@ -47,16 +51,6 @@ module Conduit::Driver::Reactor
         { 'errors' => { 'base' => 'Unexpected response from server.' } }
       end
 
-      # An xpath-like accessor for retrieving
-      # data elements from the json.
-      #
-      # e.g.,
-      #   object_path('meta/paginaton/total_count')
-      #     => Total number of records from the paginaton
-      #
-      #   object_path('lines/0/mdn')
-      #     => MDN attribute of the first element in
-      #     the lines array
       def object_path(path)
         data = json
 
