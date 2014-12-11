@@ -10,14 +10,14 @@ describe Activate do
     its(:remote_url) { should =~ /hello-labs/ }
   end
 
-  it_should_behave_like 'parser async success response' do
+  it_should_behave_like 'parser in progress success response' do
     subject do
       described_class.new(
         credentials.merge(line_id: 1, mock_status: :success)).perform.parser
     end
   end
 
-  it_should_behave_like 'parser async success response' do
+  it_should_behave_like 'parser in progress success response' do
     subject do
       described_class.new(
         credentials.merge(nid: '111222333444555667', zip: '33413', mock_status: :success)).perform.parser
