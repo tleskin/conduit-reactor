@@ -49,5 +49,10 @@ module Conduit::Driver::Reactor
     def response_content?
       !object_path('lines').nil?
     end
+
+    def in_progress?
+      status = object_path('lines/0/state')
+      (status && status.downcase != 'inactive')
+    end
   end
 end

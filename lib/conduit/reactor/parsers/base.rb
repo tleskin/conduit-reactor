@@ -15,7 +15,7 @@ module Conduit::Driver::Reactor
         @success &&= response_errors.empty?
 
         if @success
-          async_response? ? 'submitted' : 'success'
+          in_progress? ? 'submitted' : 'success'
         elsif ise? || !response_content?
           'error'
         else
@@ -33,7 +33,7 @@ module Conduit::Driver::Reactor
         raise(StandardError, 'Please implement response_content? in your parser')
       end
 
-      def async_response?
+      def in_progress?
         false
       end
 
