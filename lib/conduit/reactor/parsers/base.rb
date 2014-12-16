@@ -34,7 +34,7 @@ module Conduit::Driver::Reactor
       end
 
       def in_progress?
-        false
+        object_path('result') == 'submitted'
       end
 
       private
