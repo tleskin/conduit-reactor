@@ -17,6 +17,7 @@ module Conduit
       action :get_line
       action :get_subscriber
       action :query_subscription
+      action :query_device_info
     end
   end
 end
