@@ -10,6 +10,14 @@ module Conduit::Driver::Reactor
       super + activate_url
     end
 
+    def view
+      tpl = self.class.name.demodulize
+        .underscore.downcase
+      
+      tpl << '_port' if @options.key?(:port_info)
+      render(tpl)
+    end
+
     private
 
     def activate_url

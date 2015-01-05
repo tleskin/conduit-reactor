@@ -1,1 +1,21 @@
-<%= MultiJson.dump(request_data) %>
+<% unless line_id %>
+<%= MultiJson.dump({
+  auth_token: token,
+  callback_url: callback_url,
+  line: {      
+    nid: nid,
+    carrier_name: operator_name,
+    service_details: {
+      msid: msid,
+      msl: msl,
+      csa: csa,
+      zip: zip
+      }
+    }
+  }) %>
+<% else %>
+<%= MultiJson.dump({
+  auth_token: token,
+  callback_url: callback_url
+}) %>
+<% end %>

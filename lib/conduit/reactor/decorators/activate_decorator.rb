@@ -18,16 +18,6 @@ module Conduit::Reactor::Decorators
       mdn.to_s.gsub(/\D/, '')
     end
 
-    def request_data
-      request = {
-        auth_token: token,
-        callback_url: callback_url
-      }
-
-      request.merge!(line_data) unless line_id
-      request
-    end
-
     private
 
     def port_info?
@@ -36,39 +26,6 @@ module Conduit::Reactor::Decorators
 
     def port_attributes
       port_info? ? OpenStruct.new(port_info) : nil
-    end
-
-    def line_data
-      line = {
-        line: {
-          nid: nid,
-          carrier_name: operator_name,
-          service_details: {
-            msid: msid,
-            msl: msl,
-            csa: csa,
-            zip: zip
-          }
-        }
-      }
-      
-      line[:line].merge!(number_port_data) if port_info
-      line
-    end
-
-    def number_port_data
-      {
-        number_port_attributes: {
-          mdn:                port_mdn,
-          first_name:         port_first_name,
-          last_name:          port_last_name,
-          carrier_account:    port_carrier_account,
-          carrier_password:   port_carrier_password,
-          ssn:                port_ssn,
-          address1:           port_address1,
-          address2:           port_address2
-        }
-      }
     end
   end
 end
