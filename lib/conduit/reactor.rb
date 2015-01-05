@@ -1,6 +1,7 @@
 require 'conduit/reactor/version'
 require 'conduit/reactor/configuration'
 require 'conduit/reactor/request_mocker'
+require 'conduit/reactor/decorators'
 require 'conduit'
 
 Conduit.configure do |config|

@@ -34,6 +34,22 @@ module Conduit::Driver::Reactor
       end
     end
 
+    def view_context
+      view_decorator.new(
+        OpenStruct.new(attributes_with_values)
+      )
+    end
+
+    def attributes_with_values
+      attributes.inject({}) do |hash, attribute|
+        hash.tap do |h|
+          h[attribute] = @options[attribute]
+        end
+      end.tap do |h|
+        h[:token] = @options[:token]
+      end
+    end
+
     def perform
       if mock_mode?
         mocker = request_mocker.new(self, @options)
@@ -57,6 +73,10 @@ module Conduit::Driver::Reactor
 
     def request_mocker
       "Conduit::Reactor::RequestMocker::#{action_name}".constantize
+    end
+
+    def view_decorator
+      "Conduit::Reactor::Decorators::#{action_name}Decorator".constantize
     end
 
     def mock_mode?
