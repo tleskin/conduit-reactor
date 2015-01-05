@@ -10,12 +10,23 @@ module Conduit::Driver::Reactor
       super + activate_url
     end
 
+    def view_path
+      File.join(File.dirname(action_path), 'views', 'activate')
+    end
+
     def view
       tpl = self.class.name.demodulize
         .underscore.downcase
       
-      tpl << '_port' if @options.key?(:port_info)
-      render(tpl)
+      if @options.key?(:line_id)
+        tpl << '_existing_line'
+      elsif @options.key?(:port_info)
+        tpl << '_new_line_port'
+      else
+        tpl << '_new_line'
+      end
+     
+      render(tpl, layout: false)
     end
 
     private

@@ -1,0 +1,14 @@
+<%= MultiJson.dump({
+  auth_token: token,
+  callback_url: callback_url,
+  line: {
+    nid: nid,
+    carrier_name: operator_name,
+    service_details: {
+      msid: msid,
+      msl: msl,
+      csa: csa,
+      zip: zip
+      }
+    }
+  }) %>
