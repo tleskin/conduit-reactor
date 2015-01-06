@@ -18,6 +18,7 @@ module Conduit
       action :get_subscriber
       action :query_subscription
       action :query_device_info
+      action :check_coverage
     end
   end
 end
