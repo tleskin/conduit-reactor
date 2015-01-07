@@ -19,6 +19,7 @@ module Conduit
       action :query_subscription
       action :query_device_info
       action :cancel_port
+      action :check_coverage
     end
   end
 end
