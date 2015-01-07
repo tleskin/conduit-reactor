@@ -3,6 +3,14 @@ require 'multi_json'
 module Conduit::Driver::Reactor
   module Parser
     class Base < Conduit::Core::Parser
+
+      def self.attribute(attr_name, &block)
+        block ||= lambda do
+          object_path attr_name
+        end
+        super(attr_name, &block)
+      end
+
       def initialize(json)
         @json    = MultiJson.load(json)
         @success = true
@@ -54,7 +62,7 @@ module Conduit::Driver::Reactor
       def object_path(path)
         data = json
 
-        path.split('/').map do |element|
+        path.to_s.split('/').map do |element|
           key = element.match(/\A\d+\Z/) ? element.to_i : element
           data = data[key]
         end.last
