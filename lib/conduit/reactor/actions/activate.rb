@@ -25,7 +25,7 @@ module Conduit::Driver::Reactor
       else
         tpl << '_new_line'
       end
-     
+
       render(tpl, layout: false)
     end
 
