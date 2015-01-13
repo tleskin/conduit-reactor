@@ -56,7 +56,7 @@ describe QueryPortStatus do
     its(:serializable_hash) { should eq serializable_hash }
   end
 
-  it_should_behave_like 'parser in progress success response' do
+  it_should_behave_like 'parser success response' do
     subject do
       described_class.new(
         query_port_attributes.merge(mock_status: :success)).perform.parser

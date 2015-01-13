@@ -3,8 +3,7 @@ require 'conduit/reactor/actions/base'
 module Conduit::Driver::Reactor
   class QueryPortStatus < Conduit::Driver::Reactor::Base
     url_route           '/number_ports'
-    required_attributes :mdn
-    optional_attributes :callback_url
+    required_attributes :mdn    
     http_method         :post
 
     def remote_url
