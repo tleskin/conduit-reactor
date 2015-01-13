@@ -13,7 +13,7 @@ describe CancelPort do
     File.read('./spec/fixtures/requests/cancel_port/request.json')
   end
 
-  describe 'activate_port_request_json' do
+  describe 'cancel_port_request_json' do
     subject { cancel_port.view }
     it      { should eq cancel_port_request }
   end
@@ -41,8 +41,9 @@ describe CancelPort do
         :mdn              => "5555555555",
         :number_port_id   => 1,
         :ssn              => "123456789",
-        :state            => "cancelling",
+        :status            => "cancelling",
         :updated_at       => "2015-01-07T19:07:37.451Z",
+        :state            => nil,
         :zip              => nil,
         :zip_plus_4       => nil,
       }
