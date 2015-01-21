@@ -37,6 +37,23 @@ describe Activate do
     it      { should eq activate_line_id_request }
   end
 
+  let(:activate_attributes_carrier_code) do
+    credentials.merge(nid: '111222333444555667', zip: '33413', carrier_code: 1, mock_status: :success)
+  end
+
+  let(:activate_carrier_code) do
+    described_class.new(activate_attributes_carrier_code)
+  end
+
+  let(:activate_carrier_code_request) do
+    File.read('./spec/fixtures/requests/activate/activate_carrier_code.json')
+  end
+
+  describe 'activate_carrier_code_request_json' do
+    subject { activate_carrier_code.view }
+    it      { should eq activate_carrier_code_request }
+  end
+
   let(:activate_attributes) do
     credentials.merge(nid: '111222333444555667', zip: '33413', operator_name: 'Sprint', mock_status: :success)
   end

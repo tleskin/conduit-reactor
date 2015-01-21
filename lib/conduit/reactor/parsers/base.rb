@@ -34,7 +34,7 @@ module Conduit::Driver::Reactor
       def response_errors
         return unexpected_response_hash['errors'] if ise?
 
-        object_path('errors') || []
+        object_path('errors') || failure || []
       end
 
       def response_content?
@@ -43,6 +43,11 @@ module Conduit::Driver::Reactor
 
       def in_progress?
         object_path('result') == 'submitted'
+      end
+
+      def failure
+        failure_msg = { 'errors' => { 'base' => 'Request failed.' } }
+        return failure_msg if object_path('result') == 'failure'        
       end
 
       private
