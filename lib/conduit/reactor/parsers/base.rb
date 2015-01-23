@@ -3,6 +3,7 @@ require 'multi_json'
 module Conduit::Driver::Reactor
   module Parser
     class Base < Conduit::Core::Parser
+      attr_reader :json
 
       def self.attribute(attr_name, &block)
         block ||= lambda do
@@ -32,7 +33,7 @@ module Conduit::Driver::Reactor
       end
 
       def response_errors
-        return unexpected_response_hash['errors'] if ise?
+        return unexpected_response_hash if ise?
 
         object_path('errors') || failure || []
       end
@@ -46,13 +47,11 @@ module Conduit::Driver::Reactor
       end
 
       def failure
-        failure_msg = { 'errors' => { 'base' => 'Request failed.' } }
-        return failure_msg if object_path('result') == 'failure'        
+        failure_msg = { 'errors' => { 'message' => ['Request failed.'] } }
+        return failure_msg if object_path('result') == 'failure'
       end
 
       private
-
-      attr_reader :json
 
       def ise?
         status = object_path('status')
@@ -61,7 +60,7 @@ module Conduit::Driver::Reactor
       end
 
       def unexpected_response_hash
-        { 'errors' => { 'base' => 'Unexpected response from server.' } }
+        { 'errors' => { 'message' => ['Unexpected response from server.'] } }
       end
 
       def object_path(path)

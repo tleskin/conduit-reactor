@@ -20,7 +20,7 @@ end
 
 shared_examples_for 'parser error response' do
   its(:response_errors) do
-    expected = { 'base' => 'Unexpected response from server.' }
+    expected = { "errors" => { "message" => ["Unexpected response from server."] } }
     should eql expected
   end
   it                    { should be_an_instance_of parser }
