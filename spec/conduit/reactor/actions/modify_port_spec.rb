@@ -1,25 +1,25 @@
 require 'spec_helper'
 
-describe QueryPortStatus do
-  let(:query_port_attributes) do
+describe ModifyPort do
+  let(:modify_attributes) do
     credentials.merge(mdn: '5555555555', mock_status: :success)
   end
 
-  let(:query_port) do
-    described_class.new(query_port_attributes)
+  let(:modify_port) do
+    described_class.new(modify_attributes)
   end
 
-  let(:query_port_request) do
-    File.read('./spec/fixtures/requests/query_port_status/request.json')
+  let(:modify_port_request) do
+    File.read('./spec/fixtures/requests/modify_port/request.json')
   end
 
-  describe 'query_port_request_json' do
-    subject { query_port.view }
-    it      { should eq query_port_request }
+  describe 'modify_port_request_json' do
+    subject { modify_port.view }
+    it      { should eq modify_port_request }
   end
 
   subject do
-    described_class.new(query_port_attributes.merge(host_override: 'www.hello-labs.com'))
+    described_class.new(modify_attributes.merge(host_override: 'www.hello-labs.com'))
   end
 
   context 'when providing a override host' do
@@ -41,7 +41,7 @@ describe QueryPortStatus do
         :mdn              => "5555555555",
         :number_port_id   => 1,
         :ssn              => "123456789",
-        :status           => "completed",
+        :status            => "submitted",
         :updated_at       => "2015-01-07T19:07:37.451Z",
         :state            => nil,
         :zip              => nil,
@@ -50,30 +50,30 @@ describe QueryPortStatus do
     end
 
     subject do
-      query_port.perform.parser
+      modify_port.perform.parser
     end
 
     its(:serializable_hash) { should eq serializable_hash }
   end
 
-  it_should_behave_like 'parser success response' do
+  it_should_behave_like 'parser in progress success response' do
     subject do
       described_class.new(
-        query_port_attributes.merge(mock_status: :success)).perform.parser
+        modify_attributes.merge(mock_status: :success)).perform.parser
     end
   end
 
   it_should_behave_like 'parser failure response' do
     subject do
       described_class.new(
-        query_port_attributes.merge(mock_status: :failure)).perform.parser
+        modify_attributes.merge(mock_status: :failure)).perform.parser
     end
   end
 
   it_should_behave_like 'parser error response' do
     subject do
       described_class.new(
-        query_port_attributes.merge(mock_status: :error)).perform.parser
+        modify_attributes.merge(mock_status: :error)).perform.parser
     end
   end
 end
