@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Activate do
   let(:port_attributes) do
-    credentials.merge(nid: '111222333444555667', zip: '33413', operator_name: 'Sprint',
+    credentials.merge(nid: '111222333444555667', zip: '33413', carrier_name: 'Sprint',
                         port_info: { mdn: '5555555555', first_name: 'testy', last_name: 'tester', carrier_account: '123456',
                                     carrier_password: 'password', ssn: '123456789', address1: '123 Test ST' }, mock_status: :success)
   end
@@ -55,7 +55,7 @@ describe Activate do
   end
 
   let(:activate_attributes) do
-    credentials.merge(nid: '111222333444555667', zip: '33413', operator_name: 'Sprint', mock_status: :success)
+    credentials.merge(nid: '111222333444555667', zip: '33413', carrier_name: 'Sprint', mock_status: :success)
   end
 
   let(:activate) do
