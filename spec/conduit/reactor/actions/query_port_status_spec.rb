@@ -41,7 +41,7 @@ describe QueryPortStatus do
         :mdn              => "5555555555",
         :number_port_id   => 1,
         :ssn              => "123456789",
-        :status            => "completed",
+        :status           => "completed",
         :updated_at       => "2015-01-07T19:07:37.451Z",
         :state            => nil,
         :zip              => nil,
