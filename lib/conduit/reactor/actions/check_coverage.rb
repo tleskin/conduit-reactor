@@ -3,7 +3,7 @@ require 'conduit/reactor/actions/base'
 module Conduit::Driver::Reactor
   class CheckCoverage < Conduit::Driver::Reactor::Base
     url_route           '/carriers'
-    required_attributes :carrier_id
+    required_attributes :carrier_code
     optional_attributes :city, :state, :zip, :zip4
     http_method         :post
 
@@ -14,7 +14,7 @@ module Conduit::Driver::Reactor
     private
 
     def check_coverage_url
-      "/#{@options[:carrier_id]}/check_coverage"
+      "/#{@options[:carrier_code]}/check_coverage"
     end
   end
 end
