@@ -19,6 +19,10 @@ module Conduit::Driver::Reactor
         object_path('number_ports/0/line_id')
       end
 
+      receiver.attribute :external_port_number do
+        object_path('number_ports/0/external_port_number')
+      end
+
       receiver.attribute :first_name do
         object_path('number_ports/0/first_name')
       end
