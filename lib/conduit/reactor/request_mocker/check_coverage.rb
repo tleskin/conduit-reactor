@@ -3,7 +3,7 @@ require 'conduit/reactor/request_mocker/base'
 module Conduit::Reactor::RequestMocker
   class CheckCoverage < Base
     def fixture
-      return super if @options[:mock_status] != :success
+      return super if @mock_status != :success
       FIXTURE_PREFIX + "/check_coverage/#{determine_success_xml}.json.erb"
     end
 

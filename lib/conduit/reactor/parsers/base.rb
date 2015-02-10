@@ -34,8 +34,7 @@ module Conduit::Driver::Reactor
 
       def response_errors
         return unexpected_response_hash if ise?
-
-        object_path('errors') || failure || []
+        object_path('errors') || failure || {}
       end
 
       def response_content?
@@ -55,8 +54,7 @@ module Conduit::Driver::Reactor
 
       def ise?
         status = object_path('status')
-
-        !status.nil? && status.to_i == 500 ? true : false
+        status.to_i == 500
       end
 
       def unexpected_response_hash
