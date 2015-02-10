@@ -3,11 +3,11 @@ require 'spec_helper'
 describe CheckCoverage do
 
   let(:check_coverage_city_state_attributes) do
-    credentials.merge(city: 'WPB', state: 'FL', carrier_id: 1, mock_status: :success)
+    credentials.merge(city: 'WPB', state: 'FL', carrier_code: 1, mock_status: :success)
   end
 
   let(:check_coverage_zip_attributes) do
-    credentials.merge(zip: '11111', zip4: '1111', carrier_id: 1, mock_status: :success)
+    credentials.merge(zip: '11111', zip4: '1111', carrier_code: 1, mock_status: :success)
   end
 
   let(:check_coverage_city_state) do
