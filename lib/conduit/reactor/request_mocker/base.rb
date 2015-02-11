@@ -17,6 +17,7 @@ module Conduit::Reactor::RequestMocker
     end
 
     def unmock
+      Excon.defaults[:mock] = false
       Excon.stubs.clear
     end
 
