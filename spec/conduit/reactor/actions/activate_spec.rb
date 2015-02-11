@@ -38,7 +38,7 @@ describe Activate do
   end
 
   let(:activate_attributes_with_codes) do
-    credentials.merge(nid: '111222333444555667', zip: '33413', carrier_code: 1, plan_code: 1, mock_status: :success)
+    credentials.merge(nid: '111222333444555667', zip: '33413', carrier_id: 1, plan_id: 1, mock_status: :success)
   end
 
   let(:activate_with_codes) do
@@ -49,7 +49,7 @@ describe Activate do
     File.read('./spec/fixtures/requests/activate/activate_with_codes.json')
   end
 
-  describe 'activate_carrier_code_request_json' do
+  describe 'activate_carrier_id_request_json' do
     subject { activate_with_codes.view }
     it      { should eq activate_with_codes_request }
   end

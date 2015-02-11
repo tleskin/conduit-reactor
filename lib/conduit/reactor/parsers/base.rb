@@ -46,7 +46,7 @@ module Conduit::Driver::Reactor
       end
 
       def failure
-        failure_msg = { 'errors' => { 'message' => ['Request failed.'] } }
+        failure_msg = { 'errors' => { 'base' => ['Request failed.'] } }
         return failure_msg if object_path('result') == 'failure'
       end
 
@@ -58,7 +58,7 @@ module Conduit::Driver::Reactor
       end
 
       def unexpected_response_hash
-        { 'errors' => { 'message' => ['Unexpected response from server.'] } }
+        { 'errors' => { 'base' => ['Unexpected response from server.'] } }
       end
 
       def object_path(path)

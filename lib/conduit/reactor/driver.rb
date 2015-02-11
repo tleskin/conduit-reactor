@@ -4,7 +4,7 @@ module Conduit
       extend Conduit::Core::Driver
 
       required_credentials :token
-      optional_attributes  :mock_status, :host_override, :carrier_code
+      optional_attributes  :mock_status, :host_override, :carrier_id
 
       action :activate
       action :deactivate
