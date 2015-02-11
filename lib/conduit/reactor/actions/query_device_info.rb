@@ -3,7 +3,7 @@ require 'conduit/reactor/actions/base'
 module Conduit::Driver::Reactor
   class QueryDeviceInfo < Conduit::Driver::Reactor::Base
     url_route           '/carriers'
-    required_attributes :carrier_code, :nid
+    required_attributes :carrier_id, :nid
     http_method         :post
 
     def remote_url
@@ -13,7 +13,7 @@ module Conduit::Driver::Reactor
     private
 
     def query_device_url
-      "/#{@options[:carrier_code]}/query_device_info"
+      "/#{@options[:carrier_id]}/query_device_info"
     end
   end
 end
