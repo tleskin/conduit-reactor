@@ -3,7 +3,7 @@ require 'spec_helper'
 describe QueryDeviceInfo do
 
   let(:query_device_attributes) do
-    credentials.merge(carrier_id: 1, nid: '111222333444555667', mock_status: :success)
+    credentials.merge(carrier_id: 1, device_serial_number: '111222333444555667', mock_status: :success)
   end
 
   let(:query_device) do
