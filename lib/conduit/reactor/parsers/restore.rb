@@ -30,6 +30,10 @@ module Conduit::Driver::Reactor
       object_path('lines/0/nid_type')
     end
 
+    attribute :iccid do
+      object_path('lines/0/iccid')
+    end
+
     attribute :service_details do
       object_path('lines/0/service_details')
     end
