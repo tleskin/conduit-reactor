@@ -1,8 +1,12 @@
 module Helpers
   def credentials
     {}.tap do |credentials|
-      credentials[:token] = '9999999'      
+      credentials[:token] = '9999999'
     end
+  end
+
+  def callback_url
+    'www.somewhere.com'
   end
 end
 

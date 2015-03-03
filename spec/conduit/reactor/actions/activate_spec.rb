@@ -21,7 +21,7 @@ describe Activate do
   end
 
   let(:activate_line_id_attributes) do
-    credentials.merge(line_id: 1, mock_status: :success)
+    credentials.merge(line_id: 1, callback_url: callback_url, mock_status: :success)
   end
 
   let(:activate_line_id) do

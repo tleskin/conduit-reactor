@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe CancelPort do
   let(:cancel_attributes) do
-    credentials.merge(mdn: '5555555555', mock_status: :success)
+    credentials.merge(mdn: '5555555555', callback_url: callback_url, mock_status: :success)
   end
 
   let(:cancel_port) do

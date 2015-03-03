@@ -1,16 +1,1 @@
-<%= MultiJson.dump({
-  auth_token: token,
-  line: {
-    mdn: mdn,
-    subscriber_id: subscriber_id,
-    carrier_id: carrier_id,
-    nid: nid,
-    iccid: iccid,
-    service_details: {
-      msid: service_details[:msid],
-      msl:  service_details[:msl],
-      csa:  service_details[:csa],
-      zip:  service_details[:zip]
-    }
-  }
-}) %>
+<%= MultiJson.dump(create_line_attributes) %>
