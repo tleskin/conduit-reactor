@@ -1,10 +1,24 @@
 require 'spec_helper'
 
 describe CreateLine do
+  let(:creds) { credentials.merge!(subscriber_id: 1, carrier_id: 1, nid: '12345678', csa: '11111', zip: '33414') }
+
+  let(:create_line) do
+    described_class.new(creds)
+  end
+
+  let(:create_line_request) do
+    File.read('./spec/fixtures/requests/create_line/request.json')
+  end
+
+  describe 'create_line_request_json' do
+    subject { create_line.view }
+    it      { should eq create_line_request }
+  end
+
   subject do
     described_class.new \
-      credentials.merge(host_override: 'www.hello-labs.com', subscriber_id: 1, carrier_id: 1, nid: '12345678',
-          service_details: { csa: '11111', zip: '33414' })
+      creds.merge(host_override: 'www.hello-labs.com')
   end
 
   context 'when providing a override host' do
@@ -14,24 +28,21 @@ describe CreateLine do
   it_should_behave_like 'parser success response' do
     subject do
       described_class.new(
-        credentials.merge(mock_status: :success, subscriber_id: 1, carrier_id: 1, nid: '12345678',
-          service_details: { csa: '11111', zip: '33414' })).perform.parser
+        creds.merge(mock_status: :success)).perform.parser
     end
   end
 
   it_should_behave_like 'parser failure response' do
     subject do
       described_class.new(
-        credentials.merge(mock_status: :failure, subscriber_id: 1, carrier_id: 1, nid: '12345678',
-          service_details: { csa: '11111', zip: '33414' })).perform.parser
+        creds.merge(mock_status: :failure)).perform.parser
     end
   end
 
   it_should_behave_like 'parser error response' do
     subject do
       described_class.new(
-        credentials.merge(mock_status: :error, subscriber_id: 1, carrier_id: 1, nid: '12345678',
-          service_details: { csa: '11111', zip: '33414' })).perform.parser
+        creds.merge(mock_status: :error)).perform.parser
     end
   end
 end
