@@ -1,6 +1,5 @@
 require 'delegate'
 require 'forwardable'
-require 'json'
 
 module Conduit::Reactor::Decorators
   class Base < SimpleDelegator
@@ -11,7 +10,7 @@ module Conduit::Reactor::Decorators
       attributes[:auth_token]   = token        if token
       attributes[:callback_url] = callback_url if callback_url
 
-      attributes      
+      attributes
     end
   end
 end
