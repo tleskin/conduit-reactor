@@ -4,7 +4,7 @@ module Conduit::Driver::Reactor
   class ChangeDevice < Conduit::Driver::Reactor::Base
     url_route           '/lines'
     required_attributes :mdn, :nid
-    optional_attributes :callback_url
+    optional_attributes :callback_url, :iccid
     http_method         :post
 
     def remote_url
