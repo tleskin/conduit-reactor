@@ -1,7 +1,10 @@
 require 'spec_helper'
 
 describe ChangeDevice do
-  let(:creds) { credentials.merge!(mdn: '5555555555', nid: '99000204057111', callback_url: callback_url) }
+  let(:creds) do
+    credentials.merge!(mdn: '5555555555', nid: '99000204057111',
+      callback_url: callback_url)
+  end
 
   let(:change_device) do
     described_class.new(creds)
@@ -11,9 +14,23 @@ describe ChangeDevice do
     File.read('./spec/fixtures/requests/change_device/request.json')
   end
 
+  let(:change_device_request_with_iccid) do
+    File.read('./spec/fixtures/requests/change_device/request_with_iccid.json')
+  end
+
   describe 'change_device_request_json' do
     subject { change_device.view }
     it      { should eq change_device_request }
+  end
+
+  describe 'change device request with iccid' do
+    let(:creds) do
+      credentials.merge!(mdn: '5555555555', nid: '99000204057111',
+        iccid: '310120123456789', callback_url: callback_url)
+    end
+
+    subject { change_device.view }
+    it      { should eq change_device_request_with_iccid.strip }
   end
 
   subject do
