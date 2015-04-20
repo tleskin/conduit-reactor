@@ -64,10 +64,13 @@ module Conduit::Driver::Reactor
       def object_path(path)
         data = json
 
-        path.to_s.split('/').map do |element|
+        value = path.to_s.split('/').map do |element|
           key = element.match(/\A\d+\Z/) ? element.to_i : element
+          break if data.nil?
           data = data[key]
-        end.last
+        end
+
+        !value.nil? ? value.last : nil
       end
     end
   end
