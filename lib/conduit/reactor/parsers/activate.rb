@@ -50,8 +50,12 @@ module Conduit::Driver::Reactor
       object_path('lines/0/updated_at')
     end
 
+    attribute :number_port_status_update do
+      object_path('number_ports/0/status')
+    end
+
     def response_content?
-      !object_path('lines').nil?
+      !object_path('lines').nil? || !object_path('number_ports').nil?
     end
 
     def in_progress?
