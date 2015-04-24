@@ -19,8 +19,10 @@ describe ResetVoicemail do
   it_should_behave_like 'parser in progress success response' do
     subject do
       described_class.new(
-        reset_voicemail_attributes.merge(mock_status: :success)).perform.parser
+        reset_voicemail_attributes.merge(mock_status: :success, http_status: 202)).perform.parser
     end
+
+    its(:http_status) { should eql 202 }
   end
 
   it_should_behave_like 'parser failure response' do

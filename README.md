@@ -31,7 +31,7 @@ Or install it yourself as:
 
 4. Create a view for the action request in `lib/conduit/reactor/views`
   * The view is what actually gets rendered as the request. It typically uses the
-  attributes and values built up the the decorator to make the request
+  attributes and values built up the decorator to make the request
 
 5. Implement `lib/conduit/reactor/request_mocker/<action>.rb`
   * Typically this can just inherit from the `RequestMocker::Base`

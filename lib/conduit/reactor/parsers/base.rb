@@ -4,6 +4,7 @@ module Conduit::Driver::Reactor
   module Parser
     class Base < Conduit::Core::Parser
       attr_reader :json
+      attr_reader :http_status
 
       def self.attribute(attr_name, &block)
         block ||= lambda do
@@ -12,8 +13,9 @@ module Conduit::Driver::Reactor
         super(attr_name, &block)
       end
 
-      def initialize(json)
+      def initialize(json, http_status = nil)
         @json    = MultiJson.load(json)
+        @http_status = http_status
         @success = true
       rescue MultiJson::ParseError
         @json = unexpected_response_hash
@@ -25,7 +27,7 @@ module Conduit::Driver::Reactor
 
         if @success
           in_progress? ? 'submitted' : 'success'
-        elsif ise? || !response_content?
+        elsif internal_server_error? || !response_content?
           'error'
         else
           'failure'
@@ -33,7 +35,7 @@ module Conduit::Driver::Reactor
       end
 
       def response_errors
-        return unexpected_response_hash if ise?
+        return unexpected_response_hash if internal_server_error?
         object_path('errors') || failure || {}
       end
 
@@ -52,7 +54,9 @@ module Conduit::Driver::Reactor
 
       private
 
-      def ise?
+      def internal_server_error?
+        return true if http_status == 500
+
         status = object_path('status')
         status.to_i == 500
       end
