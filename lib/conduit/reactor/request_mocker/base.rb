@@ -9,11 +9,12 @@ module Conduit::Reactor::RequestMocker
       @base = base
       @options = options
       @mock_status = options[:mock_status].to_sym || :success
+      @http_status = options[:http_status] || 200
     end
 
     def mock
       Excon.defaults[:mock] = true
-      Excon.stub({}, {:body => response})
+      Excon.stub({}, {:body => response, :status => @http_status})
     end
 
     def unmock
