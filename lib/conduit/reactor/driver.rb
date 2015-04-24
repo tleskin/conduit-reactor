@@ -22,6 +22,7 @@ module Conduit
       action :cancel_port
       action :modify_port
       action :check_coverage
+      action :reset_voicemail
     end
   end
 end
