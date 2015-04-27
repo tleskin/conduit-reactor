@@ -16,6 +16,12 @@ describe SynchronizeCarrierServices do
     it { should eq synchronize_carrier_services_request }
   end
 
+  describe '#url_route' do
+    subject { synchronize_carrier_services }
+
+    its(:url_route) { should eql '/lines/5555555555/synchronize_carrier_services'}
+  end
+
   it_should_behave_like 'parser success response' do
     subject do
       described_class.new(
