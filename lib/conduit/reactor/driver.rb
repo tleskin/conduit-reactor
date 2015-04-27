@@ -23,6 +23,7 @@ module Conduit
       action :modify_port
       action :check_coverage
       action :reset_voicemail
+      action :synchronize_carrier_services
     end
   end
 end

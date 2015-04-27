@@ -16,6 +16,13 @@ describe ResetVoicemail do
     it { should eq reset_voicemail_request }
   end
 
+  describe '#url_route' do
+    subject { reset_voicemail }
+
+    its(:url_route) { should eql '/lines/5555555555/reset_voicemail'}
+  end
+
+
   it_should_behave_like 'parser in progress success response' do
     subject do
       described_class.new(
