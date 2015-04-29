@@ -6,7 +6,7 @@ module Helpers
   end
 
   def callback_url
-    'www.somewhere.com'
+    'www.example.com'
   end
 end
 
