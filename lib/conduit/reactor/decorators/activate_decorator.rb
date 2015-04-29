@@ -55,6 +55,7 @@ module Conduit::Reactor::Decorators
       number_port_attributes[:address2]             = port_address2         if port_address2
       number_port_attributes[:state]                = port_state            if port_state
       number_port_attributes[:city]                 = port_city             if port_city
+      number_port_attributes[:zip]                  = port_zip              if port_zip
       number_port_attributes[:carrier_account]      = port_carrier_account  if port_carrier_account
       number_port_attributes[:carrier_password]     = port_carrier_password if port_carrier_password
       number_port_attributes[:external_port_number] = external_port_number  if external_port_number
