@@ -2,7 +2,9 @@ require 'spec_helper'
 
 describe ModifyPort do
   let(:modify_attributes) do
-    credentials.merge(mdn: '5555555555', callback_url: callback_url, mock_status: :success)
+    credentials.merge(mdn: '5555555555', callback_url: callback_url, mock_status: :success,
+                      first_name: 'testy', last_name: 'tester', carrier_account: '123456', carrier_password: 'password', ssn: '123456789',
+                      authorized_by: 'authorized', address1: '123 Test St', address2: 'unit', city: 'city', state: 'FL', zip: '12345')
   end
 
   let(:modify_port) do
