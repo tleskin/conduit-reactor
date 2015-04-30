@@ -78,6 +78,6 @@ module Conduit::Driver::Reactor
 
     def response_content?
       !object_path('number_ports').nil?
-    end    
+    end
   end
 end
