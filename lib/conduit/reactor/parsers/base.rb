@@ -27,6 +27,8 @@ module Conduit::Driver::Reactor
 
         if @success
           in_progress? ? 'submitted' : 'success'
+        elsif internal_server_error? || !response_content?
+          'error'
         else
           'failure'
         end

@@ -24,7 +24,7 @@ shared_examples_for 'parser error response' do
     should eql expected
   end
   it                    { should be_an_instance_of parser }
-  its(:response_status) { should eql 'failure' }
+  its(:response_status) { should eql 'error' }
   its(:response_errors) { should_not be_empty }
 end
 
