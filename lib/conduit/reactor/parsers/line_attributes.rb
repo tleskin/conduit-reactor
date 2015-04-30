@@ -50,6 +50,10 @@ module Conduit::Driver::Reactor
       receiver.attribute :updated_at do
         object_path('lines/0/updated_at')
       end
+
+      receiver.attribute :number_port_status_update do
+        object_path('number_ports/0/status')
+      end      
     end # self.included
 
     def response_content?

@@ -70,7 +70,7 @@ module Conduit::Driver::Reactor
 
         path.to_s.split('/').map do |element|
           key = element.match(/\A\d+\Z/) ? element.to_i : element
-          data = data[key]
+          data = data.nil? ? nil : data[key]
         end.last
       end
     end
