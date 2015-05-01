@@ -10,7 +10,7 @@ module Conduit::Driver::Reactor
 
     def perform_request
       response = request(path: "/lines/#{@options[:mdn]}/reset_voicemail",
-        body: view, method: :get)
+        body: view, method: :post)
 
       parser   = parser_class.new(response.body, response.status)
       Conduit::ApiResponse.new(raw_response: response, parser: parser)
