@@ -14,6 +14,7 @@ module Conduit::Reactor::Decorators
     def_delegator  :port_attributes, :address1,             :port_address1
     def_delegator  :port_attributes, :address2,             :port_address2
     def_delegator  :port_attributes, :external_port_number, :external_port_number
+    def_delegator  :port_attributes, :authorized_by,        :authorized_by
 
     def activate_attributes
       attributes = {}
@@ -58,6 +59,7 @@ module Conduit::Reactor::Decorators
       number_port_attributes[:zip]                  = port_zip              if port_zip
       number_port_attributes[:carrier_account]      = port_carrier_account  if port_carrier_account
       number_port_attributes[:carrier_password]     = port_carrier_password if port_carrier_password
+      number_port_attributes[:authorized_by]        = authorized_by         if authorized_by
       number_port_attributes[:external_port_number] = external_port_number  if external_port_number
 
       attributes
