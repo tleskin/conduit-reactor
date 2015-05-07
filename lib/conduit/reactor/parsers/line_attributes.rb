@@ -53,8 +53,12 @@ module Conduit::Driver::Reactor
 
       receiver.attribute :number_port_status_update do
         object_path('number_ports/0/status')
-      end      
-    end # self.included
+      end
+
+      receiver.attribute :external_port_message do
+        object_path('number_ports/0/external_port_message')
+      end
+    end
 
     def response_content?
       !object_path('lines').nil?
