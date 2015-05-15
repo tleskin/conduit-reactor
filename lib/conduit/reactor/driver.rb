@@ -6,6 +6,7 @@ module Conduit
       required_credentials :token
       optional_attributes  :mock_status, :host_override, :carrier_id
 
+      action :purchase
       action :activate
       action :deactivate
       action :suspend
