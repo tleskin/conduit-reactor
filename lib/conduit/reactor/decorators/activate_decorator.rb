@@ -20,6 +20,7 @@ module Conduit::Reactor::Decorators
       attributes = {}
       attributes[:auth_token]   = token        if token
       attributes[:callback_url] = callback_url if callback_url
+      attributes[:plan_id]      = plan_id      if plan_id
 
       attributes
     end
@@ -32,7 +33,6 @@ module Conduit::Reactor::Decorators
       line_attributes[:iccid]        = iccid        if iccid
       line_attributes[:carrier_name] = carrier_name if carrier_name
       line_attributes[:carrier_id]   = carrier_id   if carrier_id
-      line_attributes[:plan_id]      = plan_id      if plan_id
 
       service_detail_attributes        = line_attributes[:service_details] = {}
       service_detail_attributes[:msid] = msid if msid
