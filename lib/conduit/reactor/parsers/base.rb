@@ -26,7 +26,7 @@ module Conduit::Driver::Reactor
         @success &&= response_errors.empty?
 
         if @success
-          in_progress? ? 'submitted' : 'success'
+          in_progress? ? result : 'success'
         elsif internal_server_error? || !response_content?
           'error'
         else
@@ -44,7 +44,7 @@ module Conduit::Driver::Reactor
       end
 
       def in_progress?
-        object_path('result') == 'submitted'
+        ['submitted', 'acknowledged'].include?(object_path('result'))
       end
 
       def failure
@@ -53,6 +53,10 @@ module Conduit::Driver::Reactor
       end
 
       private
+
+      def result
+        object_path('result')
+      end
 
       def internal_server_error?
         return true if http_status == 500

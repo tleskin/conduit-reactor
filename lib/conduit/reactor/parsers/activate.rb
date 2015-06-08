@@ -13,5 +13,14 @@ module Conduit::Driver::Reactor
       mdn = object_path('lines/0/mdn')
       (mdn.nil? || mdn.empty?)
     end
+
+    def result
+      # for number port..if its in progress and we have a number port response
+      # we need to send back acknowledged
+      #
+      # NOTE: this should be temporary, reactor need to sending back its own response instead of always looking for a number_port obj
+      return 'acknowledged' if !object_path('number_ports').nil? && in_progress?
+      super
+    end
   end
 end
