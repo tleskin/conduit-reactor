@@ -62,7 +62,7 @@ describe Activate do
   end
 
   context 'when submitting the request' do
-    let(:serializable_hash) do 
+    let(:serializable_hash) do
       {
         :activated_at               => nil,
         :carrier_id                 => 2,
@@ -75,6 +75,7 @@ describe Activate do
         :nid_type                   => "esn",
         :external_port_message      => nil,
         :number_port_status_update  => nil,
+        :manual_hotline             => nil,
         :service_details            => {"csa"=>"CSA", "msl"=>"MSL", "zip"=>"33410", "msid"=>"MSID"},
         :subscriber_id              => 2,
         :updated_at                 => "2014-11-18T21:13:37.779Z",
