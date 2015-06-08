@@ -58,6 +58,11 @@ module Conduit::Driver::Reactor
       receiver.attribute :external_port_message do
         object_path('number_ports/0/external_port_message')
       end
+
+      receiver.attribute :manual_hotline do
+        object_path('lines/0/manual_hotline')
+      end
+
     end
 
     def response_content?

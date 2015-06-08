@@ -26,6 +26,7 @@ module Conduit
       action :check_coverage
       action :reset_voicemail
       action :synchronize_carrier_services
+      action :hotline
     end
   end
 end
