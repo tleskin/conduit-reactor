@@ -16,10 +16,10 @@ describe SynchronizeCarrierServices do
     it { should eq synchronize_carrier_services_request }
   end
 
-  describe '#url_route' do
+  describe '#remote_url' do
     subject { synchronize_carrier_services }
 
-    its(:url_route) { should eql '/lines/5555555555/synchronize_carrier_services'}
+    its(:remote_url) { should eql 'http://www.atom-reactor.dev/lines/5555555555/synchronize_carrier_services'}
   end
 
   it_should_behave_like 'parser success response' do
