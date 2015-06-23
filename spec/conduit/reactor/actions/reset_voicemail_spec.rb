@@ -16,10 +16,10 @@ describe ResetVoicemail do
     it { should eq reset_voicemail_request }
   end
 
-  describe '#url_route' do
+  describe '#remote_url' do
     subject { reset_voicemail }
 
-    its(:url_route) { should eql '/lines/5555555555/reset_voicemail'}
+    its(:remote_url) { should eql 'http://www.atom-reactor.dev/lines/5555555555/reset_voicemail'}
   end
 
 

@@ -4,13 +4,16 @@ module Conduit::Driver::Reactor
   class Hotline < Conduit::Driver::Reactor::Base
     url_route           '/lines'
     required_attributes :mdn
+    http_method         :post
 
-    def perform_request
-      response = request(path: "/lines/#{@options[:mdn]}/hotline",
-        body: view, method: :post)
+    def remote_url
+      super + hotline_url
+    end
 
-      parser   = parser_class.new(response.body)
-      Conduit::ApiResponse.new(raw_response: response, parser: parser)
+    private
+
+    def hotline_url
+      "/#{@options[:mdn]}/hotline"
     end
   end
 end
