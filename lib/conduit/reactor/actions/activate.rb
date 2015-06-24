@@ -4,7 +4,8 @@ module Conduit::Driver::Reactor
   class Activate < Conduit::Driver::Reactor::Base
     url_route           '/lines'
     optional_attributes :line_id, :nid, :msid, :msl, :csa, :zip, :carrier_name,
-                        :port_info, :callback_url, :carrier_id, :plan_id, :iccid
+                        :port_info, :callback_url, :carrier_id, :plan_id, :iccid,
+                        :subscriber_uuid, :company_uuid
     http_method         :post
 
     def remote_url
