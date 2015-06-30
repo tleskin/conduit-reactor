@@ -36,7 +36,7 @@ describe Activate do
   end
 
   let(:activate_attributes) do
-    credentials.merge(nid: '111222333444555667', zip: '33413', carrier_name: 'Sprint', mock_status: :success)
+    credentials.merge(nid: '111222333444555667', zip: '33413', carrier_name: 'Sprint', mock_status: :success, subscriber_uuid: "edfd286c-316f-40ad-bb8a-7f8f889bc6ca", company_uuid: "adfd286c-316f-40ad-bb8a-7f8f889bc6ca")
   end
 
   let(:activate) do
@@ -70,6 +70,8 @@ describe Activate do
         :iccid                      => nil,
         :line_id                    => nil,
         :line_status                => "activating",
+        :subscriber_uuid            => "edfd286c-316f-40ad-bb8a-7f8f889bc6ca",
+        :company_uuid               => "adfd286c-316f-40ad-bb8a-7f8f889bc6ca",
         :mdn                        => "",
         :nid                        => "111222333444555667",
         :nid_type                   => "esn",
@@ -77,7 +79,6 @@ describe Activate do
         :number_port_status_update  => nil,
         :manual_hotline             => nil,
         :service_details            => {"csa"=>"CSA", "msl"=>"MSL", "zip"=>"33410", "msid"=>"MSID"},
-        :subscriber_id              => 2,
         :updated_at                 => "2014-11-18T21:13:37.779Z",
       }
     end

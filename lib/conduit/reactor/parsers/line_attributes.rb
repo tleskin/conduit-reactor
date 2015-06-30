@@ -15,8 +15,12 @@ module Conduit::Driver::Reactor
         object_path('lines/0/state')
       end
 
-      receiver.attribute :subscriber_id do
-        object_path('lines/0/subscriber_id')
+      receiver.attribute :subscriber_uuid do
+        object_path('lines/0/subscriber_uuid')
+      end
+
+      receiver.attribute :company_uuid do
+        object_path('lines/0/company_uuid')
       end
 
       receiver.attribute :mdn do
