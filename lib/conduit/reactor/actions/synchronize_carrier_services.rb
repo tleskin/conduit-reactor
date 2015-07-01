@@ -4,6 +4,7 @@ module Conduit::Driver::Reactor
     url_route           '/lines'
     required_attributes :mdn
     optional_attributes :callback_url
+    http_method         :post
 
     def remote_url
       super + synchronize_carrier_services_url
