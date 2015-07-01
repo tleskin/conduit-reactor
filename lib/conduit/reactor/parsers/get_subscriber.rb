@@ -6,6 +6,10 @@ module Conduit::Driver::Reactor
       object_path('subscribers/0/id')
     end
 
+    attribute :uuid do
+      object_path('subscribers/0/uuid')
+    end
+
     attribute :company_id do
       object_path('subscribers/0/company_id')
     end
