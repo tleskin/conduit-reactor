@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    conduit-reactor (0.0.33)
+    conduit-reactor (0.0.34)
       conduit (~> 0.6.0)
       multi_json (~> 1.10.1)
 
@@ -68,3 +68,6 @@ DEPENDENCIES
   rspec
   rspec-its
   shoulda-matchers
+
+BUNDLED WITH
+   1.10.5
