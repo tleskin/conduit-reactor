@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    conduit-reactor (0.0.34)
+    conduit-reactor (0.0.35)
       conduit (~> 0.6.0)
       multi_json (~> 1.10.1)
 
@@ -14,30 +14,25 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    aws-sdk (2.0.26)
-      aws-sdk-resources (= 2.0.26)
-    aws-sdk-core (2.0.26)
-      builder (~> 3.0)
+    aws-sdk (2.1.2)
+      aws-sdk-resources (= 2.1.2)
+    aws-sdk-core (2.1.2)
       jmespath (~> 1.0)
-      multi_json (~> 1.0)
-      multi_xml (~> 0.5)
-    aws-sdk-resources (2.0.26)
-      aws-sdk-core (= 2.0.26)
-    builder (3.2.2)
+    aws-sdk-resources (2.1.2)
+      aws-sdk-core (= 2.1.2)
     conduit (0.6.0)
       activesupport
       aws-sdk
       excon
       tilt
     diff-lcs (1.2.5)
-    excon (0.44.2)
+    excon (0.45.3)
     i18n (0.7.0)
     jmespath (1.0.2)
       multi_json (~> 1.0)
     json (1.8.2)
     minitest (5.5.1)
     multi_json (1.10.1)
-    multi_xml (0.5.5)
     rspec (3.1.0)
       rspec-core (~> 3.1.0)
       rspec-expectations (~> 3.1.0)

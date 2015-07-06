@@ -44,7 +44,7 @@ describe Activate do
   end
 
   let(:activate_request) do
-    File.read('./spec/fixtures/requests/activate/activate.json')
+    File.read('./spec/fixtures/requests/activate/activate.json').chomp
   end
 
   describe 'activate_request_json' do
