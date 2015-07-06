@@ -33,6 +33,8 @@ module Conduit::Reactor::Decorators
       line_attributes[:iccid]        = iccid        if iccid
       line_attributes[:carrier_name] = carrier_name if carrier_name
       line_attributes[:carrier_id]   = carrier_id   if carrier_id
+      line_attributes[:company_uuid] = company_uuid if company_uuid
+      line_attributes[:subscriber_uuid] = subscriber_uuid if subscriber_uuid
 
       service_detail_attributes        = line_attributes[:service_details] = {}
       service_detail_attributes[:msid] = msid if msid
