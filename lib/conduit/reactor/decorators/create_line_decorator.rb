@@ -3,8 +3,7 @@ require_relative 'base'
 module Conduit::Reactor::Decorators
   class CreateLineDecorator < Base
     def create_line_attributes
-      attributes = {}
-      attributes[:auth_token] = token if token
+      attributes = {}      
 
       line_attributes                 = attributes[:line] = {}
       line_attributes[:mdn]           = mdn           if mdn
