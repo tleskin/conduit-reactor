@@ -1,1 +1,1 @@
-{"auth_token":"9999999","line":{"nid":"111222333444555667","carrier_name":"Sprint","company_uuid":"adfd286c-316f-40ad-bb8a-7f8f889bc6ca","subscriber_uuid":"edfd286c-316f-40ad-bb8a-7f8f889bc6ca","service_details":{"zip":"33413"}}}
+{"line":{"nid":"111222333444555667","carrier_name":"Sprint","company_uuid":"adfd286c-316f-40ad-bb8a-7f8f889bc6ca","subscriber_uuid":"edfd286c-316f-40ad-bb8a-7f8f889bc6ca","service_details":{"zip":"33413"}}}

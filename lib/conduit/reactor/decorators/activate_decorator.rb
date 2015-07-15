@@ -18,7 +18,6 @@ module Conduit::Reactor::Decorators
 
     def activate_attributes
       attributes = {}
-      attributes[:auth_token]   = token        if token
       attributes[:callback_url] = callback_url if callback_url
       attributes[:plan_id]      = plan_id      if plan_id
 
