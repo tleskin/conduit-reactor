@@ -43,8 +43,6 @@ module Conduit::Driver::Reactor
         hash.tap do |h|
           h[attribute] = @options[attribute]
         end
-      end.tap do |h|
-        h[:token] = @options[:token]
       end
     end
 
@@ -67,7 +65,9 @@ module Conduit::Driver::Reactor
 
     def http_headers
       {
-        'Content-Type' => 'application/json'
+        'Accept'       => 'application/json',
+        'Content-Type' => 'application/json',
+        'X-AUTH-TOKEN' => @options[:token]
       }
     end
 
