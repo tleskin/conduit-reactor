@@ -4,7 +4,7 @@ module Conduit::Driver::Reactor
   class Activate < Conduit::Driver::Reactor::Base
     url_route           '/lines'
     optional_attributes :line_id, :nid, :msid, :msl, :csa, :zip, :carrier_name,
-                        :port_info, :callback_url, :carrier_id, :plan_id, :iccid,
+                        :port_info, :callback_url, :carrier_id, :plan_ids, :iccid,
                         :subscriber_uuid, :company_uuid
     http_method         :post
 
@@ -19,7 +19,7 @@ module Conduit::Driver::Reactor
     def view
       tpl = self.class.name.demodulize
         .underscore.downcase
-      
+
       if @options.key?(:line_id)
         tpl << '_existing_line'
       elsif @options.key?(:port_info)

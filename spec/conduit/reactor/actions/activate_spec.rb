@@ -19,7 +19,7 @@ describe Activate do
   end
 
   let(:activate_attributes_with_codes) do
-    credentials.merge(nid: '111222333444555667', zip: '33413', carrier_id: 1, plan_id: 1, mock_status: :success)
+    credentials.merge(nid: '111222333444555667', zip: '33413', carrier_id: 1, plan_ids: [1], mock_status: :success)
   end
 
   let(:activate_with_codes) do
