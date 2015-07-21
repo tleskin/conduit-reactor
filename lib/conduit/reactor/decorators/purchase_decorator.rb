@@ -7,7 +7,7 @@ module Conduit::Reactor::Decorators
       attributes[:callback_url] = callback_url if callback_url
 
       purchase_attributes = attributes[:purchase] = {}
-      purchase_attributes[:plan_id] = plan_id
+      purchase_attributes[:plan_ids] = plan_ids
       purchase_attributes[:mdn]     = mdn
 
       attributes
