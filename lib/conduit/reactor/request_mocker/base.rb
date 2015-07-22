@@ -41,12 +41,16 @@ module Conduit::Reactor::RequestMocker
     end
 
     def response
-      if [:success, :failure, :error].include?(@mock_status)
+      if response_statuses.include?(@mock_status)
         return error_response if @mock_status == :error
         render_response
       else
-        raise(ArgumentError, "Mock status must be :success, :failure, or :error")
+        raise(ArgumentError, "Mock status must be one of the following: #{response_statuses.join(', ')}")
       end
+    end
+
+    def response_statuses
+      %i(success failure error)
     end
 
     def error_response
