@@ -14,7 +14,9 @@ module Conduit::Driver::Reactor
     private
 
     def query_subscription_url
-      "/#{@options[:mdn]}/query_subscription?service_period_uuid=#{@options[:service_period_uuid]}"
+      "/#{@options[:mdn]}/query_subscription" +
+          (@options[:service_period_uuid] ?
+           "?service_period_uuid=#{@options[:service_period_uuid]}" : "")
     end
   end
 end
