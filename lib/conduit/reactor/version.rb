@@ -1,5 +1,5 @@
 module Conduit
   module Reactor
-    VERSION = '0.0.39'
+    VERSION = '1.0.0'
   end
 end

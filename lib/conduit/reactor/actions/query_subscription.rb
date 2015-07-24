@@ -4,6 +4,7 @@ module Conduit::Driver::Reactor
   class QuerySubscription < Conduit::Driver::Reactor::Base
     url_route           '/lines'
     required_attributes :mdn
+    optional_attributes :service_period_uuid
     http_method         :get
 
     def remote_url
@@ -13,7 +14,9 @@ module Conduit::Driver::Reactor
     private
 
     def query_subscription_url
-      "/#{@options[:mdn]}/query_subscription"
+      "/#{@options[:mdn]}/query_subscription" +
+          (@options[:service_period_uuid] ?
+           "?service_period_uuid=#{@options[:service_period_uuid]}" : "")
     end
   end
 end
