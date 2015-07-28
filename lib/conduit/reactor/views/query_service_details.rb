@@ -1,1 +1,0 @@
-<%= MultiJson.dump({}) %>
