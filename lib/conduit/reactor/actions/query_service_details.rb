@@ -8,12 +8,12 @@ module Conduit::Driver::Reactor
     http_method         :get
 
     def remote_url
-      super + query_subscription_url
+      super + query_service_details_url
     end
 
     private
 
-    def query_subscription_url
+    def query_service_details_url
       "/#{@options[:mdn]}/service_details" +
           (@options[:service_period_uuid] ?
            "?service_period_uuid=#{@options[:service_period_uuid]}" : "")
