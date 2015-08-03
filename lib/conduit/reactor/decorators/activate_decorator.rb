@@ -19,7 +19,7 @@ module Conduit::Reactor::Decorators
     def activate_attributes
       attributes = {}
       attributes[:callback_url] = callback_url if callback_url
-      attributes[:plan_id]      = plan_id      if plan_id
+      attributes[:plan_ids]     = plan_ids     if plan_ids
 
       attributes
     end

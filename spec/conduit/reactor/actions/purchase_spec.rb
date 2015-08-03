@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Purchase do
   let(:purchase_attributes) do
-    credentials.merge(mdn: '5555555555', plan_id: 1, callback_url: callback_url, mock_status: :success)
+    credentials.merge(mdn: '5555555555', plan_ids: [1], callback_url: callback_url, mock_status: :success)
   end
 
   let(:purchase) do

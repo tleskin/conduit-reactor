@@ -1,1 +1,1 @@
-{"callback_url":"www.example.com","purchase":{"plan_id":1,"mdn":"5555555555"}}
+{"callback_url":"www.example.com","purchase":{"plan_ids":[1],"mdn":"5555555555"}}
