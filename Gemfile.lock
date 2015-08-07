@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    conduit-reactor (1.0.3)
+    conduit-reactor (1.0.4)
       conduit (~> 0.6.0)
       multi_json (~> 1.10.1)
 
@@ -14,12 +14,12 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    aws-sdk (2.1.7)
-      aws-sdk-resources (= 2.1.7)
-    aws-sdk-core (2.1.7)
+    aws-sdk (2.1.8)
+      aws-sdk-resources (= 2.1.8)
+    aws-sdk-core (2.1.8)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.1.7)
-      aws-sdk-core (= 2.1.7)
+    aws-sdk-resources (2.1.8)
+      aws-sdk-core (= 2.1.8)
     conduit (0.6.2)
       activesupport
       aws-sdk
@@ -33,6 +33,7 @@ GEM
     json (1.8.3)
     minitest (5.7.0)
     multi_json (1.10.1)
+    rake (10.4.2)
     rspec (3.3.0)
       rspec-core (~> 3.3.0)
       rspec-expectations (~> 3.3.0)
@@ -61,9 +62,10 @@ PLATFORMS
 
 DEPENDENCIES
   conduit-reactor!
+  rake
   rspec
   rspec-its
   shoulda-matchers
 
 BUNDLED WITH
-   1.10.5
+   1.10.6
