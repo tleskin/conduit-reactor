@@ -6,7 +6,7 @@ module Conduit::Driver::Reactor
       usage_time from_number to_number data_octets location call_seconds debit
       billable_data_octets billable_call_seconds billable_texts codes
       service_period_id)
-      
+
     def response_content?
       !object_path('items').nil?
     end
