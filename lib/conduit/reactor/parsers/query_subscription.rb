@@ -6,10 +6,6 @@ module Conduit::Driver::Reactor
       object_path('carrier_data')
     end
 
-    attribute :services do
-      object_path('services')
-    end
-
     def response_content?
       object_path('carrier_data').nil?
     end
