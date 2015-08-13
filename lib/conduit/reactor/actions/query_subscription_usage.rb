@@ -4,7 +4,7 @@ module Conduit::Driver::Reactor
   class QuerySubscriptionUsage < Conduit::Driver::Reactor::Base
     url_route           "/carriers"
     required_attributes :carrier_id
-    optional_attributes :device_serial_number, :mdn, :from_date, :to_date, :usage_type
+    optional_attributes :meid, :mdn, :from_date, :to_date, :usage_type
     http_method         :post
 
     def remote_url

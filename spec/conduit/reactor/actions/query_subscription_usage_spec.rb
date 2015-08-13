@@ -3,7 +3,7 @@ require 'spec_helper'
 describe QuerySubscriptionUsage do
 
   let(:query_subscription_usage_attributes) do
-    credentials.merge(carrier_id: 1, device_serial_number: '111222333444555667',
+    credentials.merge(carrier_id: 1, meid: '111222333444555667',
                       iccid: '89011200000403604860', mock_status: :success)
   end
 
