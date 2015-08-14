@@ -3,7 +3,7 @@ require 'conduit/reactor/actions/base'
 module Conduit::Driver::Reactor
   class Hotline < Conduit::Driver::Reactor::Base
     url_route           '/lines'
-    required_attributes :mdn
+    required_attributes :line_uuid
     http_method         :post
 
     def remote_url
@@ -13,7 +13,7 @@ module Conduit::Driver::Reactor
     private
 
     def hotline_url
-      "/#{@options[:mdn]}/hotline"
+      "/#{@options[:line_uuid]}/hotline"
     end
   end
 end

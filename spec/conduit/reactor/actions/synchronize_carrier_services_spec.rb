@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe SynchronizeCarrierServices do
-  let(:synchronize_carrier_services_attributes) { credentials.merge(mdn: '5555555555', callback_url: callback_url) }
+  let(:line_uuid) { '98d32801-85ec-4bf4-aa0e-95cc6c143d89' }
+  let(:synchronize_carrier_services_attributes) { credentials.merge(line_uuid: line_uuid, callback_url: callback_url) }
 
   let(:synchronize_carrier_services) do
     described_class.new(synchronize_carrier_services_attributes)
@@ -19,7 +20,7 @@ describe SynchronizeCarrierServices do
   describe '#remote_url' do
     subject { synchronize_carrier_services }
 
-    its(:remote_url) { should eql 'http://www.atom-reactor.dev/lines/5555555555/synchronize_carrier_services'}
+    its(:remote_url) { should eql "http://www.atom-reactor.dev/lines/#{line_uuid}/synchronize_carrier_services"}
   end
 
   it_should_behave_like 'parser success response' do
