@@ -1,9 +1,8 @@
 require 'spec_helper'
 
 describe CancelPort do
-  let(:line_uuid) { '98d32801-85ec-4bf4-aa0e-95cc6c143d89' }
   let(:cancel_attributes) do
-    credentials.merge(line_uuid: line_uuid, callback_url: callback_url, mock_status: :success)
+    credentials.merge(mdn: '5555555555', callback_url: callback_url, mock_status: :success)
   end
 
   let(:cancel_port) do
