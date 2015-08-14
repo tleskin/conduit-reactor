@@ -28,6 +28,7 @@ module Conduit::Reactor::Decorators
       attributes = activate_attributes
 
       line_attributes                = attributes[:line] = {}
+      line_attributes[:uuid]         = uuid         if uuid
       line_attributes[:nid]          = nid          if nid
       line_attributes[:iccid]        = iccid        if iccid
       line_attributes[:carrier_name] = carrier_name if carrier_name

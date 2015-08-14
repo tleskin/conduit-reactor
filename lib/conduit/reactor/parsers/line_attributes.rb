@@ -7,6 +7,10 @@ module Conduit::Driver::Reactor
         object_path('lines/0/id')
       end
 
+      receiver.attribute :line_uuid do
+        object_path('lines/0/uuid')
+      end
+
       receiver.attribute :carrier_id do
         object_path('lines/0/carrier_id')
       end
