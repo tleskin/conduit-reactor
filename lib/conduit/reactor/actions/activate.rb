@@ -3,7 +3,7 @@ require 'conduit/reactor/actions/base'
 module Conduit::Driver::Reactor
   class Activate < Conduit::Driver::Reactor::Base
     url_route           '/lines'
-    optional_attributes :line_id, :nid, :msid, :msl, :csa, :zip, :carrier_name,
+    optional_attributes :line_id, :nid, :msid, :msl, :csa, :zip, :carrier_name, :uuid,
                         :port_info, :callback_url, :carrier_id, :plan_ids, :iccid,
                         :subscriber_uuid, :company_uuid
     http_method         :post

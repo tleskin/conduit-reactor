@@ -3,9 +3,10 @@ require_relative 'base'
 module Conduit::Reactor::Decorators
   class CreateLineDecorator < Base
     def create_line_attributes
-      attributes = {}      
+      attributes = {}
 
       line_attributes                 = attributes[:line] = {}
+      line_attributes[:uuid]          = uuid          if uuid
       line_attributes[:mdn]           = mdn           if mdn
       line_attributes[:iccid]         = iccid         if iccid
       line_attributes[:carrier_id]    = carrier_id    if carrier_id

@@ -70,6 +70,7 @@ describe Activate do
         :iccid                      => nil,
         :line_id                    => nil,
         :line_status                => "activating",
+        :line_uuid                  => nil,
         :subscriber_uuid            => "edfd286c-316f-40ad-bb8a-7f8f889bc6ca",
         :company_uuid               => "adfd286c-316f-40ad-bb8a-7f8f889bc6ca",
         :mdn                        => "",
