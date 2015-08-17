@@ -1,10 +1,11 @@
 require 'spec_helper'
 
 describe ChangeDevice do
+  let(:line_uuid) { '98d32801-85ec-4bf4-aa0e-95cc6c143d89' }
   let(:creds) do
-    credentials.merge!(mdn: '5555555555', nid: '99000204057111',
-      callback_url: callback_url)
-  end
+   credentials.merge(line_uuid: line_uuid, nid: '99000204057111',
+    callback_url: callback_url)
+ end
 
   let(:change_device) do
     described_class.new(creds)
@@ -25,7 +26,7 @@ describe ChangeDevice do
 
   describe 'change device request with iccid' do
     let(:creds) do
-      credentials.merge!(mdn: '5555555555', nid: '99000204057111',
+      credentials.merge!(line_uuid: line_uuid, nid: '99000204057111',
         iccid: '310120123456789', callback_url: callback_url)
     end
 

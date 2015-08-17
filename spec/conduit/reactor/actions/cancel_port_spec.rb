@@ -27,7 +27,7 @@ describe CancelPort do
   end
 
   context 'when submitting the request' do
-    let(:serializable_hash) do 
+    let(:serializable_hash) do
       {
         :address1             => "123 Test St",
         :address2             => nil,

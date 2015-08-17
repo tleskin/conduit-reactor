@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe ResetVoicemail do
-  let(:reset_voicemail_attributes) { credentials.merge(mdn: '5555555555', callback_url: callback_url) }
+  let(:line_uuid) { '98d32801-85ec-4bf4-aa0e-95cc6c143d89' }
+  let(:reset_voicemail_attributes) { credentials.merge(line_uuid: line_uuid, callback_url: callback_url) }
 
   let(:reset_voicemail) do
     described_class.new(reset_voicemail_attributes)
@@ -19,7 +20,7 @@ describe ResetVoicemail do
   describe '#remote_url' do
     subject { reset_voicemail }
 
-    its(:remote_url) { should eql 'http://www.atom-reactor.dev/lines/5555555555/reset_voicemail'}
+    its(:remote_url) { should eql "http://www.atom-reactor.dev/lines/#{line_uuid}/reset_voicemail"}
   end
 
 

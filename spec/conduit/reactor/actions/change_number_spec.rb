@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe ChangeNumber do
-  let(:creds) { credentials.merge!(mdn: '5555555555', callback_url: callback_url) }
+  let(:line_uuid) { '98d32801-85ec-4bf4-aa0e-95cc6c143d89' }
+  let(:creds) { credentials.merge(line_uuid: line_uuid, callback_url: callback_url) }
 
   let(:change_number) do
     described_class.new(creds)

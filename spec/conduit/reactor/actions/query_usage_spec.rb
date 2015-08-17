@@ -25,6 +25,6 @@ describe QueryUsage do
       described_class.new(
         options.merge(mock_status: :error)).perform.parser
     end
-  end  
+  end
 
 end

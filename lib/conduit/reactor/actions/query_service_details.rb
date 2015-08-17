@@ -3,7 +3,7 @@ require 'conduit/reactor/actions/base'
 module Conduit::Driver::Reactor
   class QueryServiceDetails < Conduit::Driver::Reactor::Base
     url_route           '/lines'
-    required_attributes :mdn
+    required_attributes :line_uuid
     optional_attributes :service_period_uuid
     http_method         :get
 
@@ -14,7 +14,7 @@ module Conduit::Driver::Reactor
     private
 
     def query_service_details_url
-      "/#{@options[:mdn]}/service_details" +
+      "/#{@options[:line_uuid]}/service_details" +
           (@options[:service_period_uuid] ?
            "?service_period_uuid=#{@options[:service_period_uuid]}" : "")
     end
