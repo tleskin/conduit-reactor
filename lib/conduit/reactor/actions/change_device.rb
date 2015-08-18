@@ -3,8 +3,8 @@ require 'conduit/reactor/actions/base'
 module Conduit::Driver::Reactor
   class ChangeDevice < Conduit::Driver::Reactor::Base
     url_route           '/lines'
-    required_attributes :line_uuid, :nid
-    optional_attributes :callback_url, :iccid
+    required_attributes :nid
+    optional_attributes :callback_url, :iccid, :mdn, :line_uuid
     http_method         :post
 
     def remote_url
