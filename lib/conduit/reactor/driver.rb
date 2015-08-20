@@ -28,6 +28,7 @@ module Conduit
       action :reset_voicemail
       action :synchronize_carrier_services
       action :hotline
+      action :end_service_period
     end
   end
 end

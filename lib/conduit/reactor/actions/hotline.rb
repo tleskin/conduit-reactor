@@ -13,7 +13,7 @@ module Conduit::Driver::Reactor
     private
 
     def hotline_url
-      "/#{@options[:line_uuid]}/hotline"
+      "/#{@options[:line_uuid]}/end_service_period"
     end
   end
 end
