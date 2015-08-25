@@ -60,7 +60,7 @@ describe QueryDeviceInfo do
           :device_fed_met_indicator              => "true",
           :device_fed_met_indicator_description  => "FED is in the past, financial eligibility on the device has been met.",
           :activation_status                     => "N",
-          :activation_status_description         => "Device is inactive"
+          :activation_status_description         => "Device is deactivated"
         }
     end
 
