@@ -21,7 +21,8 @@ describe Conduit::Driver::Reactor::QueryUsage::Parser do
         bill_number: '5612223811',
         create_time: Time.now.to_i,
         usage_time: Time.now.to_i,
-        data_octets: 128
+        data_octets: 128,
+        codes: ['roaming']
       }]
     end
 
@@ -36,6 +37,7 @@ describe Conduit::Driver::Reactor::QueryUsage::Parser do
       expect(record.created_at).to be_a_kind_of(Time)
       expect(record.used_at).to be_a_kind_of(Time)
       expect(record.data_octets).to eql 128
+      expect(record.codes).to eql ['roaming']
     end
 
     it 'should not populate other attributes' do
