@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    conduit-reactor (1.1.5)
+    conduit-reactor (1.1.6)
       conduit (~> 0.6.0)
       multi_json (~> 1.10.1)
 
@@ -20,7 +20,7 @@ GEM
       jmespath (~> 1.0)
     aws-sdk-resources (2.1.15)
       aws-sdk-core (= 2.1.15)
-    conduit (0.6.2)
+    conduit (0.6.3)
       activesupport
       aws-sdk
       excon
