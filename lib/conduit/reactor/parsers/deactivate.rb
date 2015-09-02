@@ -7,7 +7,7 @@ module Conduit::Driver::Reactor
 
     def in_progress?
       status = object_path('lines/0/state')
-      (status && status.downcase != 'inactive')
+      (status && status.downcase != 'deactivated')
     end
   end
 end
