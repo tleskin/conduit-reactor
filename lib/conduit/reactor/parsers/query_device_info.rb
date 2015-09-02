@@ -23,6 +23,7 @@ module Conduit::Driver::Reactor
     attribute :equipment_freq_type_code
     attribute :equipment_freq_type_description
     attribute :uicc_not_available_reason_code
+    attribute :uicc_not_available_reason_message
     attribute :not_available_reason_code
     attribute :esn_meid_hex
     attribute :validation_message
