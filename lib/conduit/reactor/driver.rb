@@ -30,6 +30,7 @@ module Conduit
       action :synchronize_carrier_services
       action :hotline
       action :end_service_period
+      action :daily_line_usage_summary
     end
   end
 end
