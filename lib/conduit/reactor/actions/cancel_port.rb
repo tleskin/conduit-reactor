@@ -3,7 +3,7 @@ require 'conduit/reactor/actions/base'
 module Conduit::Driver::Reactor
   class CancelPort < Conduit::Driver::Reactor::Base
     url_route           '/number_ports'
-    required_attributes :mdn
+    required_attributes :line_uuid
     optional_attributes :callback_url
     http_method         :post
 
@@ -14,7 +14,7 @@ module Conduit::Driver::Reactor
     private
 
     def number_port_url
-      "/#{@options[:mdn]}/cancel"
+      "/#{@options[:line_uuid]}/cancel"
     end
   end
 end
