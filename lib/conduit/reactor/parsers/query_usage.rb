@@ -4,7 +4,7 @@ module Conduit::Driver::Reactor
   class QueryUsage::Parser < Parser::Base
     USAGE_RECORD_ATTRIBUTES = %i(id service_type sourcefile bill_number create_time 
       usage_time from_number to_number data_octets location call_seconds debit
-      billable_data_octets billable_call_seconds billable_texts codes
+      billable_data_octets billable_call_seconds billable_texts codes dialed_number
       service_period_id)
 
     def response_content?
