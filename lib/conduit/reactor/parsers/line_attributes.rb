@@ -71,6 +71,10 @@ module Conduit::Driver::Reactor
         object_path('lines/0/manual_hotline')
       end
 
+      receiver.attribute :has_credit do
+        object_path('lines/0/has_credit')
+      end
+
     end
 
     def response_content?
