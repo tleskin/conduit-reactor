@@ -31,6 +31,7 @@ module Conduit
       action :hotline
       action :end_service_period
       action :daily_line_usage_summary
+      action :validate_port
     end
   end
 end
