@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
   #
   s.add_dependency 'conduit',    '~> 0.6.0'
   s.add_dependency 'multi_json', '~> 1.10.1'
+  s.add_dependency 'pry-rails',  '~> 0.3.2'
 
   # Development Dependencies
   #
