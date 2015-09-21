@@ -32,6 +32,7 @@ module Conduit
       action :end_service_period
       action :daily_line_usage_summary
       action :validate_port
+      action :cancel_bucket
     end
   end
 end
