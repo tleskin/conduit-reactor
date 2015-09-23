@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    conduit-reactor (1.2.2)
+    conduit-reactor (1.2.3)
       conduit (~> 0.6.0)
       multi_json (~> 1.10.1)
       pry-rails (~> 0.3.2)
