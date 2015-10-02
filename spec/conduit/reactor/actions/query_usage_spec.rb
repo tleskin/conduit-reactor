@@ -3,7 +3,7 @@ require 'spec_helper'
 describe QueryUsage do
   let(:options) do
     credentials.merge(mdn: '5612223811', starting_at: Time.mktime(2015, 4, 1),
-      ending_at: Time.mktime(2015, 5, 1))
+      ending_at: Time.mktime(2015, 5, 1), service_type: 'voice')
   end
 
   it_should_behave_like 'parser success response' do
