@@ -42,7 +42,8 @@ describe Conduit::Driver::Reactor::QueryUsage::Parser do
 
     it 'should not populate other attributes' do
       record = subject.items.first
-      expect(record.location).to be_nil
+      expect(record.originating_location).to be_nil
+      expect(record.terminating_location).to be_nil
       expect(record.to_number).to be_nil
       expect(record.from_number).to be_nil
       expect(record.call_seconds).to be_nil
@@ -80,7 +81,8 @@ describe Conduit::Driver::Reactor::QueryUsage::Parser do
     it 'should not populate other attributes' do
       record = subject.items.first
       expect(record.data_octets).to be_nil
-      expect(record.location).to be_nil
+      expect(record.originating_location).to be_nil
+      expect(record.terminating_location).to be_nil
       expect(record.call_seconds).to be_nil
     end
   end
@@ -97,7 +99,7 @@ describe Conduit::Driver::Reactor::QueryUsage::Parser do
         from_number: '5612223811',
         to_number:   '5612223812',
         call_seconds: 300,
-        location:    'PALM BEACH GARDENS, FL'
+        originating_location: 'PALM BEACH GARDENS, FL'
       }]
     end
 
@@ -113,7 +115,8 @@ describe Conduit::Driver::Reactor::QueryUsage::Parser do
       expect(record.used_at).to be_a_kind_of(Time)
       expect(record.from_number).to eql '5612223811'
       expect(record.to_number).to eql '5612223812'
-      expect(record.location).to eql 'PALM BEACH GARDENS, FL'
+      expect(record.originating_location).to eql 'PALM BEACH GARDENS, FL'
+      expect(record.terminating_location).to be_nil
       expect(record.call_seconds).to eql 300
     end
 
