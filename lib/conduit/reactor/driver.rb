@@ -34,6 +34,7 @@ module Conduit
       action :validate_port
       action :cancel_bucket
       action :change_line
+      action :query_carrier_services
     end
   end
 end
