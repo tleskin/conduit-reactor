@@ -34,6 +34,10 @@ module Conduit::Driver::Reactor
       object_path('permanent_carrier_services')
     end
 
+    attribute :opted_out_carrier_services do
+      object_path('opted_out_carrier_services')
+    end
+
     attribute :credit_summary do
       object_path('credit_summary')
     end

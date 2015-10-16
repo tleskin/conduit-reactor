@@ -33,6 +33,7 @@ module Conduit
       action :daily_line_usage_summary
       action :validate_port
       action :cancel_bucket
+      action :change_line
     end
   end
 end
