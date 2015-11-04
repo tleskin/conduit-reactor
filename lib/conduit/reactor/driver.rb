@@ -35,6 +35,7 @@ module Conduit
       action :cancel_bucket
       action :change_line
       action :query_carrier_services
+      action :query_carrier_plans
     end
   end
 end
