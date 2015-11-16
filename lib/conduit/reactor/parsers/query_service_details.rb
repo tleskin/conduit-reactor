@@ -43,7 +43,7 @@ module Conduit::Driver::Reactor
     end
 
     def response_content?
-      object_path('usage_summary').nil?
+      !object_path('usage_summary').nil?
     end
   end
 end
