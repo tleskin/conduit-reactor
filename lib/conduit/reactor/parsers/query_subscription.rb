@@ -7,7 +7,7 @@ module Conduit::Driver::Reactor
     end
 
     def response_content?
-      object_path('carrier_data').nil?
+      !object_path('carrier_data').nil?
     end
   end
 end

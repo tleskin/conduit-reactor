@@ -27,8 +27,6 @@ module Conduit::Driver::Reactor
 
         if @success
           in_progress? ? result : 'success'
-        elsif internal_server_error? || !response_content?
-          'error'
         else
           'failure'
         end
@@ -49,7 +47,7 @@ module Conduit::Driver::Reactor
 
       def failure
         failure_msg = { 'errors' => { 'base' => ['Request failed.'] } }
-        return failure_msg if object_path('result') == 'failure'
+        return failure_msg if object_path('result') == 'failure' || !response_content?
       end
 
       private
