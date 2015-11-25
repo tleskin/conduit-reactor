@@ -2,7 +2,7 @@ require 'conduit/reactor/actions/base'
 module Conduit::Driver::Reactor
   class SynchronizeCarrierServices < Conduit::Driver::Reactor::Base
     url_route           '/lines'
-    optional_attributes :callback_url, :line_uuid, :mdn
+    optional_attributes :callback_url, :line_uuid, :mdn, :retry_failed_services
     http_method         :post
 
     def remote_url
