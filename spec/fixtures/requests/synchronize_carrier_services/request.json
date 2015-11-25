@@ -1,1 +1,1 @@
-{"callback_url":"www.example.com"}
+{"callback_url":"www.example.com","retry_failed_services":true}
