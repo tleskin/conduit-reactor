@@ -76,6 +76,5 @@ module Conduit::Driver::Reactor
     def response_content?
       !object_path('lines').nil?
     end
-
   end
 end
