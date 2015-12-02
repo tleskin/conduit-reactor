@@ -17,6 +17,7 @@ module Conduit
       action :create_line
       action :get_line
       action :get_subscriber
+      action :get_service_period
       action :query_subscription
       action :query_device_info
       action :query_port_status
