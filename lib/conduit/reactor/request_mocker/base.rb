@@ -13,18 +13,23 @@ module Conduit::Reactor::RequestMocker
     end
 
     def mock
+      @defaults_mock = Excon.defaults[:mock] || false
       Excon.defaults[:mock] = true
-      Excon.stub({}, {:body => response, :status => @http_status})
+      @stub = Excon.stub({}, {:body => response, :status => @http_status})
+
     end
 
     def unmock
-      Excon.defaults[:mock] = false
-      Excon.stubs.clear
+      Excon.defaults[:mock] = @defaults_mock
+      Excon.stubs.delete @stub
     end
 
     def with_mocking
-      mock and yield.tap { unmock }
-    end
+      mock
+      res = yield
+      unmock
+      res
+     end
 
     private
 
